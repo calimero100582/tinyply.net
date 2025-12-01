@@ -1,7 +1,7 @@
 # tinyply.net
 
 ## Overview 🍰
-TinyPly.Net is a .NET library for reading and writing [PLY](https://en.wikipedia.org/wiki/PLY_(file_format)) polygon files. It is a C# adaptation of the original tinyply project and provides utilities for loading PLY meshes, extracting elements and creating new files in either ASCII or binary form.
+TinyPly.Net, based on https://github.com/ddiakopoulos/tinyply, is a .NET library for reading and writing [PLY](https://en.wikipedia.org/wiki/PLY_(file_format)) polygon files. It is a C# adaptation of the original tinyply project and provides utilities for loading PLY meshes, extracting elements and creating new files in either ASCII or binary form.
 
 ## Features ✨
 - Parse existing PLY files from a stream
