@@ -6,10 +6,14 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\TinyPlyNet\TinyPlyNet.csproj" />
+    <ProjectReference Include="..\TinyPlyNet.GaussianSplatting\TinyPlyNet.GaussianSplatting.csproj" />
     <None Update="App.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="apple.ply">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="gaussian-splat-minimal.ply">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -24,8 +24,14 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TinyPlyNet\TinyPlyNet.csproj" />
+    <ProjectReference Include="..\TinyPlyNet.HighLevel\TinyPlyNet.HighLevel.csproj" />
+    <ProjectReference Include="..\TinyPlyNet.GaussianSplatting\TinyPlyNet.GaussianSplatting.csproj" />
     <None Include="..\TinyPlyNet.Example\apple.ply">
       <Link>apple.ply</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\TinyPlyNet.Example\gaussian-splat-minimal.ply">
+      <Link>gaussian-splat-minimal.ply</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

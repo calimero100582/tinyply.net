@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>12</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="GaussianSplatData.cs" />
+    <Compile Include="GaussianSplattingLayout.cs" />
+    <Compile Include="GaussianSplattingLayoutResolver.cs" />
+    <Compile Include="GaussianSplattingValidationResult.cs" />
+    <Compile Include="GaussianSplattingValidator.cs" />
+    <Compile Include="GaussianSplattingImporter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\\TinyPlyNet\\TinyPlyNet.csproj" />
+    <ProjectReference Include="..\\TinyPlyNet.HighLevel\\TinyPlyNet.HighLevel.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,69 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TinyPlyNet;
+using TinyPlyNet.GaussianSplatting;
 
 namespace TinyPlyNet.Example
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            using (var stream = new FileStream(args[0], FileMode.Open, FileAccess.Read))
-            {
-                var f = new PlyFile(stream);
-                var xyz = new List<float>();
-                f.RequestPropertyFromElement("vertex", new[] { "x", "y", "z" }, xyz);
-                var index = new List<List<int>>();
-                f.RequestListPropertyFromElement("face", "vertex_indices", index);
-                f.Read(stream);
-                foreach (var e in xyz)
-                {
-                    Console.WriteLine("{0}", e);
-                }
-                foreach (var i in index)
-                {
-                    Console.WriteLine("{0}", i.Count);
-                }
+            var samplePath = args.Length > 0 ? args[0] : "gaussian-splat-minimal.ply";
 
-                using (var writeStream = new FileStream("writeTest.ply", FileMode.Create, FileAccess.Write))
-                {
-                    var writeFile = new PlyFile();
-                    writeFile.AddPropertiesToElement("vertex", new[] { "x", "y", "z" }, xyz);
-                    writeFile.AddListPropertyToElement("face", "vertex_indices", index);
-                    writeFile.Write(writeStream);
-                }
-                
-                using (var writeStream = new FileStream("writeTestBinary.ply", FileMode.Create, FileAccess.Write))
-                {
-                    var writeFile = new PlyFile();
-                    writeFile.AddPropertiesToElement("vertex", new[] { "x", "y", "z" }, xyz);
-                    writeFile.AddListPropertyToElement("face", "vertex_indices", index);
-                    writeFile.Write(writeStream, true); // true for binary format
-                }
-            }
-            
-            using (var stream = new FileStream("writeTestBinary.ply", FileMode.Open, FileAccess.Read))
+            using (var validationStream = new FileStream(samplePath, FileMode.Open, FileAccess.Read))
             {
-                var f = new PlyFile(stream);
-                var xyz = new List<float>();
-                f.RequestPropertyFromElement("vertex", new[] { "x", "y", "z" }, xyz);
-                var index = new List<List<int>>();
-                f.RequestListPropertyFromElement("face", "vertex_indices", index);
-                f.Read(stream);
-                foreach (var e in xyz)
+                var file = new PlyFile(validationStream);
+                var validator = new GaussianSplattingValidator();
+                var validation = validator.Validate(file);
+
+                Console.WriteLine($"Schema valid: {validation.IsValid}");
+                foreach (var issue in validation.Report.Issues)
                 {
-                    Console.WriteLine("{0}", e);
-                }
-                foreach (var i in index)
-                {
-                    Console.WriteLine("{0}", i.Count);
+                    Console.WriteLine($"- {issue.Code}: {issue.Message}");
                 }
             }
 
+            using (var importStream = new FileStream(samplePath, FileMode.Open, FileAccess.Read))
+            {
+                var importer = new GaussianSplattingImporter();
+                var data = importer.Import(importStream);
+
+                Console.WriteLine($"Imported splats: {data.Count}");
+                Console.WriteLine($"Position values: {data.Positions.Count}");
+                Console.WriteLine($"DC feature values: {data.DcFeatures.Count}");
+            }
         }
     }
 }

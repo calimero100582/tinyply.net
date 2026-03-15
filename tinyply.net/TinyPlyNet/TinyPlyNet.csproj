@@ -14,6 +14,18 @@
     <Compile Include="PlyElement.cs" />
     <Compile Include="PlyFile.cs" />
     <Compile Include="PlyProperty.cs" />
+    <Compile Include="Schema/PlyElementSchema.cs" />
+    <Compile Include="Schema/PlyPropertyKind.cs" />
+    <Compile Include="Schema/PlyPropertySchema.cs" />
+    <Compile Include="Schema/PlySchema.cs" />
+    <Compile Include="Schema/PlySchemaIssue.cs" />
+    <Compile Include="Schema/PlySchemaIssueKind.cs" />
+    <Compile Include="Schema/PlySchemaResolver.cs" />
+    <Compile Include="Schema/PropertyAliasBinding.cs" />
+    <Compile Include="Schema/PropertyAliasDefinition.cs" />
+    <Compile Include="Schema/PropertyAliasResolutionResult.cs" />
+    <Compile Include="Schema/PropertyGroupDefinition.cs" />
+    <Compile Include="Schema/PropertyGroupResolutionResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

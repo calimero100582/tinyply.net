@@ -87,6 +87,23 @@ namespace TinyPlyNet
         /// Is big endian encoding ?
         /// </summary>
         public bool IsBigEndian { get; set; }
+
+        /// <summary>
+        /// Returns an immutable snapshot of the parsed PLY header schema.
+        /// </summary>
+        public PlySchema GetSchema()
+        {
+            return new PlySchema(
+                Elements.Select(element =>
+                    new PlyElementSchema(
+                        element.Name,
+                        element.Size,
+                        element.Properties.Select(property =>
+                            new PlyPropertySchema(
+                                property.Name,
+                                property.PropertyType,
+                                property.ListType)))));
+        }
         
         /// <summary>
         /// read ply from stream

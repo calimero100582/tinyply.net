@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyPlyNet.Example", "TinyP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyPlyNet.Tests", "TinyPlyNet.Tests\TinyPlyNet.Tests.csproj", "{C47FAF62-BFCB-4E8B-A251-1B711BA0539C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyPlyNet.HighLevel", "TinyPlyNet.HighLevel\TinyPlyNet.HighLevel.csproj", "{4EA7D7D0-2C5E-4D81-83DB-4A6194F486AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyPlyNet.GaussianSplatting", "TinyPlyNet.GaussianSplatting\TinyPlyNet.GaussianSplatting.csproj", "{F031AE4F-C928-47CE-BCB7-C1EA101E33B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{C47FAF62-BFCB-4E8B-A251-1B711BA0539C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C47FAF62-BFCB-4E8B-A251-1B711BA0539C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C47FAF62-BFCB-4E8B-A251-1B711BA0539C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EA7D7D0-2C5E-4D81-83DB-4A6194F486AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA7D7D0-2C5E-4D81-83DB-4A6194F486AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA7D7D0-2C5E-4D81-83DB-4A6194F486AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA7D7D0-2C5E-4D81-83DB-4A6194F486AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F031AE4F-C928-47CE-BCB7-C1EA101E33B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F031AE4F-C928-47CE-BCB7-C1EA101E33B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F031AE4F-C928-47CE-BCB7-C1EA101E33B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F031AE4F-C928-47CE-BCB7-C1EA101E33B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
