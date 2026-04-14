@@ -216,7 +216,7 @@ namespace TinyPlyNet.Helpers
         /// <param name="value">output value</param>
         public static void WriteData<T>(this TextWriter stream, T value)
         {
-            stream.Write(string.Format(CultureInfo.InvariantCulture, "g", value));
+            stream.Write(string.Format(CultureInfo.InvariantCulture, "{0:g}", value));
             stream.Write(" ");
         }
 
