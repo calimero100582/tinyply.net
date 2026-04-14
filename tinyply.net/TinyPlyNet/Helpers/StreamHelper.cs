@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -163,7 +164,7 @@ namespace TinyPlyNet.Helpers
             {
                 w = "NaN";
             }
-            return Convert.ChangeType(w, t);
+            return Convert.ChangeType(w, t, CultureInfo.InvariantCulture);
         }
 
         /// <summary>
@@ -215,7 +216,7 @@ namespace TinyPlyNet.Helpers
         /// <param name="value">output value</param>
         public static void WriteData<T>(this TextWriter stream, T value)
         {
-            stream.Write(value);
+            stream.Write(string.Format(CultureInfo.InvariantCulture, "g", value));
             stream.Write(" ");
         }
 
