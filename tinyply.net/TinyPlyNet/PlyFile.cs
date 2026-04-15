@@ -597,6 +597,13 @@ namespace TinyPlyNet
                 writer.WriteLine("format ascii 1.0");
             }
 
+            var provenance = "[Written by TinyPly.Net]";
+
+            if (!Comments.Contains(provenance))
+            {
+                writer.WriteLine($"comment {provenance}");
+            }
+
             // write comments
             foreach (var comment in this.Comments)
             {
