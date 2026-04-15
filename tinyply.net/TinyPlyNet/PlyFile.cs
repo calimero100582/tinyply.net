@@ -527,7 +527,7 @@ namespace TinyPlyNet
             sr.DiscardBufferedData();
         }
        
-        private void ParseHeader(TextReader stream)
+        private bool ParseHeader(TextReader stream)
         {
             bool gotMagic = false;
             while (true)
@@ -572,6 +572,8 @@ namespace TinyPlyNet
 
                 }
             }
+
+            return gotMagic;
         }
 
         #endregion reader
