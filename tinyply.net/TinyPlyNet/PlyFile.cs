@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using TinyPlyNet.Helpers;
 
 namespace TinyPlyNet
@@ -626,7 +627,9 @@ namespace TinyPlyNet
 
         private void WriteInternal(Stream stream)
         {
-            var streamWriter = new StreamWriter(stream);
+            using var streamWriter = new StreamWriter(stream, encoding: new UTF8Encoding(false, true), bufferSize: 1024, leaveOpen: true);
+            streamWriter.NewLine = "\n";
+
             this.WriteHeader(streamWriter);
             if (this.IsBinary)
             {
