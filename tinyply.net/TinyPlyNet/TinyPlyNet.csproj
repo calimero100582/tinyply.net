@@ -1,27 +1,46 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>TinyPlyNet</RootNamespace>
-    <Nullable>enable</Nullable>
-    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-    <LangVersion>12</LangVersion>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="Helper.cs" />
-    <Compile Include="Helpers/ByteHelper.cs" />
-    <Compile Include="Helpers/StreamHelper.cs" />
-    <Compile Include="Helpers/UnbufferedStreamReader.cs" />
-    <Compile Include="PlyElement.cs" />
-    <Compile Include="PlyFile.cs" />
-    <Compile Include="PlyProperty.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="PolySharp" Version="1.15.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>TinyPlyNet</RootNamespace>
+		<Nullable>enable</Nullable>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<LangVersion>12</LangVersion>
+		<PackageId>yk35.tinyply.net</PackageId>
+		<Authors>yk35</Authors>
+		<Company>yk35</Company>
+		<Product>TinyPLY.Net</Product>
+		<Description>TinyPly.Net, based on https://github.com/ddiakopoulos/tinyply, is a .NET library for reading and writing PLY polygon files. It is a C# adaptation of the original tinyply project and provides utilities for loading PLY meshes, extracting elements and creating new files in either ASCII or binary form.</Description>
+		<NuGetAuditMode>all</NuGetAuditMode>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/oceyra/oceyra-dbml-parser</RepositoryUrl>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="..\..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="Helper.cs" />
+		<Compile Include="Helpers/ByteHelper.cs" />
+		<Compile Include="Helpers/StreamHelper.cs" />
+		<Compile Include="Helpers/UnbufferedStreamReader.cs" />
+		<Compile Include="PlyElement.cs" />
+		<Compile Include="PlyFile.cs" />
+		<Compile Include="PlyProperty.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Properties\" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="PolySharp" Version="1.15.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
 </Project>
